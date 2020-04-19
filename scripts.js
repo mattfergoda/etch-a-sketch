@@ -1,4 +1,4 @@
-let colorize = false;
+let color = false;
 
 function createGrid(grid_size) {
     // First find grid div.
@@ -10,13 +10,13 @@ function createGrid(grid_size) {
             const newSquare = document.createElement('div');
             newSquare.classList.add('square')
             newSquare.addEventListener("mouseenter", (e) => {
-                if (!newSquare.style.backgroundColor && colorize) {
+                if (!newSquare.style.backgroundColor && color) {
                     newSquare.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
                 }
-                else if (!newSquare.style.backgroundColor && !colorize) {
+                else if (!newSquare.style.backgroundColor && !color) {
                     newSquare.style.backgroundColor = 'black';
                 }
-                else if (newSquare.style.backgroundColor && colorize) {
+                else if (newSquare.style.backgroundColor && color) {
                     // Make color darker if already passed over square.
                     newSquare.style.filter += 'brightness(70%)';
                 }
@@ -30,21 +30,25 @@ function addButtonListeners() {
     const clearButton = document.querySelector('#clear');
     clearButton.addEventListener('click', clearGrid);
 
-    const colorizeButton = document.querySelector('#colorize');
-    colorizeButton.addEventListener('click', colorizeSquares);
-
-    const blackButton = document.querySelector('#black');
-    blackButton.addEventListener('click', blackSquares);
+    const colorButton = document.querySelector('#color');
+    colorButton.addEventListener('click', toggleColor);
 }
 
-function blackSquares(e) {
-    colorize = false;
-    clearGrid(e);
-}
-
-function colorizeSquares(e) {
-    colorize = true;
-    clearGrid(e);
+function toggleColor(e) {
+    if (color) {
+        color = false;
+    }
+    else {
+        color = true
+    }
+    // Set button text;
+    const colorButton = document.querySelector('#color');
+    if (color) {
+        colorButton.textContent = 'Black';
+    }
+    else {
+        colorButton.textContent = 'Color';
+    }
 }
 
 function clearGrid(e) {

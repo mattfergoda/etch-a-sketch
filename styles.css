@@ -1,6 +1,15 @@
 body {
     background-color: gray;
 }
+h1 {
+    font-family: Lobster, monospace;
+    font-size: 50px;
+    color: gold;
+    text-shadow: 5px 5px 5px black;
+    text-align: center;
+    margin: 10px 50px;
+}
+
 #grid {
     display: grid;
     grid-column-gap: 0px;
@@ -9,38 +18,57 @@ body {
     border-color: black;
     border-radius: 2%;
     background-color: white;
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
     margin: auto;
 }
 
 #board {
     background-color: red;
-    height: 620px;
-    width: 620px;
-    padding: 20px 10px 50px 10px;
+    height: 600px;
+    width: 500px;
+    padding: 0px 0px 0px 0px;
     margin: auto;
     border-style: solid;
     border-width: thick;
-    border-radius: 2%;
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px black;
 }
 
 #buttons {
     display: block;
-    margin: auto;
-    padding: 15px;
+    padding: 7px 5px;
     text-align: center;
 }
 
 button {
-    font-family: monospace;
-    padding: 5px 10px;
-    margin: 0px 13px;
+    display: float;
+    font-family: Lobster, monospace;
+    margin: 10px;
     height: 75px;
     width: 75px;
-    font-size: 16px;
+    font-size: 18px;
     border-style: solid;
+    border-width: thick;
     border-radius: 100%;
+    border-color: black;
 }
 
+button#clear {
+    float: left;
+}
+
+button#color {
+    float: right;
+}
+
+h2 {
+    font-family: Lobster, monospace;
+    font-size: 30px;
+    color: gold;
+    text-shadow: 5px 5px 5px black;
+    margin: auto;
+    text-align: center;
+    padding: 3%;
+}
 
